@@ -19,7 +19,9 @@ RUN apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev
 
 RUN  apt-get update -y && apt-get install -y default-jdk
 
-CMD java -Djava.library.path="/app/lib" -jar /app/npr.jar eu /etc/openalpr/openalpr.conf /usr/share/openalpr/runtime_data /app/npr/stills 1 LM55KVG
+ENTRYPOINT ["java", "-Djava.library.path=/app/lib", "-jar", "/app/npr.jar"]
+
+CMD [""]
 
 
 
