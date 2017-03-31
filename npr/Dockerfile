@@ -16,10 +16,9 @@ run apt-get update && apt-get install -y \
 
 
 RUN apt-get install -y openalpr openalpr-daemon openalpr-utils libopenalpr-dev
-
 RUN  apt-get update -y && apt-get install -y default-jdk
-
-ENTRYPOINT ["java", "-Djava.library.path=/app/lib", "-jar", "/app/npr.jar"]
+RUN  apt-get install -y libavformat-dev libavcodec-dev libavutil-dev
+ENTRYPOINT ["java", "-Djava.library.path=/app/lib", "-jar", "/app/anpr.jar"]
 
 CMD [""]
 
